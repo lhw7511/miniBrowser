@@ -12,11 +12,33 @@
 @end
 
 @implementation ViewController
-@synthesize mainWebView,urlTextField,bookMarkSegmentedControl;
+@synthesize mainWebView,urlTextField,bookMarkSegmentedControl,activityIndicatorView;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.facebook.com"]]];
+    NSString *urlString = @"http://www.facebook.com";
+    [mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
+    urlTextField.text = urlString;
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    NSString *urlString = urlTextField.text;
+    if(![urlString hasPrefix:@"http://"]){
+        urlString = [[NSString alloc]initWithFormat:@"http://%@",[urlTextField text]];
+    }
+    [mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
+    [textField resignFirstResponder];
+    return YES;
 }
 
-
+- (IBAction)bookMarkAction:(id)sender {
+    NSString *tempUrl = [bookMarkSegmentedControl titleForSegmentAtIndex:bookMarkSegmentedControl.selectedSegmentIndex] ;
+    NSString *url = [[NSString alloc]initWithFormat:@"http://www.%@.com",[tempUrl lowercaseString]];
+    [mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+    urlTextField.text = url;
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    [activityIndicatorView startAnimating];
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [activityIndicatorView stopAnimating];
+}
 @end
