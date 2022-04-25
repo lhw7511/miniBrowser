@@ -43,13 +43,29 @@
                                 <rect key="frame" x="2" y="750" width="394" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="rewind" id="kf4-zf-uqJ"/>
+                                    <barButtonItem systemItem="rewind" id="kf4-zf-uqJ">
+                                        <connections>
+                                            <action selector="goBack" destination="qMz-xI-QjY" id="fO6-9Z-njG"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Xsz-WN-8pC"/>
-                                    <barButtonItem systemItem="fastForward" id="DPL-Zh-hUU"/>
+                                    <barButtonItem systemItem="fastForward" id="DPL-Zh-hUU">
+                                        <connections>
+                                            <action selector="goForward" destination="qMz-xI-QjY" id="6Sa-7N-y4T"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Lls-Zg-dsr"/>
-                                    <barButtonItem systemItem="stop" id="zrn-J7-Orj"/>
+                                    <barButtonItem systemItem="stop" id="zrn-J7-Orj">
+                                        <connections>
+                                            <action selector="stopLoading" destination="qMz-xI-QjY" id="Blh-G5-Wdq"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rEk-7z-NgR"/>
-                                    <barButtonItem systemItem="refresh" id="Saz-W7-yRe"/>
+                                    <barButtonItem systemItem="refresh" id="Saz-W7-yRe">
+                                        <connections>
+                                            <action selector="reload" destination="qMz-xI-QjY" id="lHk-QY-xQi"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMz-xI-QjY">
@@ -60,7 +76,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="LoT-1e-ac7"/>
                                 </connections>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4uF-mI-Xgy">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4uF-mI-Xgy">
                                 <rect key="frame" x="167" y="392" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" name="AccentColor"/>

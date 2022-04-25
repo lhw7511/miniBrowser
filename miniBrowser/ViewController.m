@@ -29,6 +29,11 @@
     return YES;
 }
 
+
+
+
+
+
 - (IBAction)bookMarkAction:(id)sender {
     NSString *tempUrl = [bookMarkSegmentedControl titleForSegmentAtIndex:bookMarkSegmentedControl.selectedSegmentIndex] ;
     NSString *url = [[NSString alloc]initWithFormat:@"http://www.%@.com",[tempUrl lowercaseString]];
