@@ -35,6 +35,7 @@
     [mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
     urlTextField.text = url;
 }
+//webview delegate
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     [activityIndicatorView startAnimating];
 }
