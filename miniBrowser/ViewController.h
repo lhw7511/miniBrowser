@@ -8,6 +8,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UISegmentedControl *bookMarkSegmentedControl;
+@property (strong, nonatomic) IBOutlet UIWebView *mainWebView;
+@property (strong, nonatomic) IBOutlet UITextField *urlTextField;
 
 
 @end

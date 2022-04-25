@@ -12,10 +12,10 @@
 @end
 
 @implementation ViewController
-
+@synthesize mainWebView,urlTextField,bookMarkSegmentedControl;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.facebook.com"]]];
 }
 
 
