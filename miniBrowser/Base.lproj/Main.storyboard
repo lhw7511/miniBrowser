@@ -37,9 +37,19 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem systemItem="rewind" id="kf4-zf-uqJ"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Xsz-WN-8pC"/>
                                     <barButtonItem systemItem="fastForward" id="DPL-Zh-hUU"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Lls-Zg-dsr"/>
+                                    <barButtonItem systemItem="stop" id="zrn-J7-Orj"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rEk-7z-NgR"/>
+                                    <barButtonItem systemItem="refresh" id="Saz-W7-yRe"/>
                                 </items>
                             </toolbar>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMz-xI-QjY">
+                                <rect key="frame" x="0.0" y="193" width="414" height="601"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
